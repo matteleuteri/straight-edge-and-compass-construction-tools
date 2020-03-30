@@ -7,7 +7,7 @@ import java.util.Vector;
 public class Drawing extends Canvas 
 {
     Vector<Point> pts = new Vector<Point>();
-    Vector<Point[]> lines = new Vector<Point[]>();
+    Vector<Line> lines = new Vector<Line>();
     Vector<Arc> curves = new Vector<Arc>();
 	public static void main(String[] args) 
 	{
@@ -38,8 +38,8 @@ public class Drawing extends Canvas
     	for(int k = 0; k < lines.size(); k++)
     	{
     		//draw all the lines
-    		Point p0 = lines.get(k)[0];
-    		Point p1 = lines.get(k)[1];
+    		Point p0 = lines.get(k).getx1();
+    		Point p1 = lines.get(k).getx2();
     		g.drawLine((int)p0.getX(), (int)p0.getY(), (int)p1.getX(), (int)p1.getY());
     	}  
     	for(int m = 0; m < curves.size(); m++)
@@ -81,7 +81,14 @@ public class Drawing extends Canvas
     	if(endpoint1==null || endpoint2==null)
     		{System.out.println("point name not recognized");}
     	else
-    		{Point[] newline = {endpoint1,endpoint2};lines.add(newline);} 
+    	{
+    		//find line length
+    		int xDist = endpoint1.getX()-endpoint2.getX();
+    		int yDist = endpoint1.getY()-endpoint2.getY();
+    		int len = (int)Math.sqrt((xDist*xDist) + (yDist*yDist));
+    		Line newline = new Line("neame not defined yet...", endpoint1, endpoint2, len);
+    		lines.add(newline);
+    	} 
     }
 
     public void makeArc(String[] tokens)
