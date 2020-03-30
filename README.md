@@ -22,9 +22,13 @@ to draw an arc use "arc pivotpointname arcstartpoint clockwisedegrees counterclo
 example:
 
 "label p1 200 200"
+
 "label p2 300 150"
+
 "line p1 p2"
+
 "arc p1 p2 45 90"
+
 
 
 
