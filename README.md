@@ -30,5 +30,11 @@ example:
 "arc p1 p2 45 90"
 
 
+TODO:
 
+save the names and lengths of lines so they can be referenced later
+
+create a tool to show a grid of lines and some points so I can more easily pick points
+
+create isVisible variables to all classes. This raises a question about whether it would be better to split up arcs or keep them as onne like I am doing ow
 
