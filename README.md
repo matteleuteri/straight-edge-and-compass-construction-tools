@@ -19,5 +19,12 @@ to draw a line, use "line point1name point2name"
 
 to draw an arc use "arc pivotpointname arcstartpoint clockwisedegrees counterclockwisedegrees"
 
+example:
+
+"label p1 200 200"
+"label p2 300 150"
+"line p1 p2"
+"arc p1 p2 45 90"
+
 
 
